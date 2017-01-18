@@ -1,4 +1,5 @@
 # GLOBEx
+A global traveling experience sharing platform
 
 ## Backend
 
