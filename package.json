@@ -1,0 +1,47 @@
+{
+  "name": "globex",
+  "version": "1.0.0",
+  "description": "A global traveling experience sharing platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node server.js",
+    "lint": "eslint src server.js api.js webpack.confing.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awinder0230/GLOBEx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awinder0230/GLOBEx/issues"
+  },
+  "homepage": "https://github.com/awinder0230/GLOBEx#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "mongoose": "^4.7.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.15.0"
+  }
+}
