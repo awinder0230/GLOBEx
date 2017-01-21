@@ -1,5 +1,5 @@
-# GLOBEx
-A global traveling experience sharing platform
+# Gourmet
+A global cuisine sharing platform
 
 ## Backend
 
@@ -29,11 +29,13 @@ A global traveling experience sharing platform
 ## Frontend
 
 #### Page
+- WelcomePage
 - HomePage
-- PersonalPage( classify by user )
-- ArticlePage( See/Edit Articles )
-- LocationPage( classify by location )
-	- Google Map API
+	- Feature Gourmets
+	- Chef's Choice Restaurant
+- SingleUserPage( Gourmets )
+- ArticlePage( View/Edit Articles )
 
 #### UI
 - CSS
+- Bootstrap

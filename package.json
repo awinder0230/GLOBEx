@@ -1,7 +1,7 @@
 {
-  "name": "globex",
+  "name": "Gourmet",
   "version": "1.0.0",
-  "description": "A global traveling experience sharing platform",
+  "description": "A global cuisine sharing platform",
   "main": "index.js",
   "scripts": {
     "start": "babel-node server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awinder0230/GLOBEx.git"
+    "url": "git+https://github.com/awinder0230/Gourmet.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/awinder0230/GLOBEx/issues"
+    "url": "https://github.com/awinder0230/Gourmet/issues"
   },
-  "homepage": "https://github.com/awinder0230/GLOBEx#readme",
+  "homepage": "https://github.com/awinder0230/Gourmet#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
     "express": "^4.14.0",
