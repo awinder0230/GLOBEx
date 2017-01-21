@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+import WelcomePage from './WelcomePage';
+import HomePage from './HomePage';
+import SingleUserPage from './SingleUserPage';
+import Navbar from './Navbar';
+
 class App extends Component {
   state = {
     route: window.location.hash.substr(1),
@@ -14,9 +19,17 @@ class App extends Component {
   }
 
   renderRoute() {
-    if (this.state.route === '/articles') {
-      return <ArticlesPage />;
+    // www.globex.com/welcome/
+    if (this.state.route === '/welcome') {
+      return <WelcomePage />;
     }
+    // www.globex.com/users/userid/
+    if (this.state.route.startsWith('/users/')) {
+      const id = this.state.route.split('/users/')[1];
+      return <SingleUserPage id={id} />;
+    }
+    // www.globex.com
+    return <HomePage />;
   }
 
   renderBreadcrumb() {
@@ -26,11 +39,11 @@ class App extends Component {
   render() {
     return (
       <div>
-       
+        {this.renderNavbar()}
+        {this.renderRoute()}
       </div>
     );
   }
 }
-
 
 export default App;
