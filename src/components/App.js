@@ -19,9 +19,9 @@ class App extends Component {
   }
 
   renderRoute() {
-    // www.globex.com/welcome/
-    if (this.state.route === '/welcome') {
-      return <WelcomePage />;
+    // www.globex.com/home/
+    if (this.state.route === '/home') {
+      return <HomePage />;
     }
     // www.globex.com/users/userid/
     if (this.state.route.startsWith('/users/')) {
@@ -29,7 +29,7 @@ class App extends Component {
       return <SingleUserPage id={id} />;
     }
     // www.globex.com
-    return <HomePage />;
+    return <WelcomePage />;
   }
 
   renderBreadcrumb() {
