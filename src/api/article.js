@@ -39,7 +39,7 @@ articleRouter.get('/query', (req, res) => {
     delete query['num'];
   }
 
-  User.find(query).limit(num).sort({popularity: -1}).exec((err, users) => {
+  Article.find(query).limit(num).sort({popularity: -1}).exec((err, users) => {
     if(err) return res.status(500).send(err);
     return res.json(users);
   });
