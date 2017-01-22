@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import WelcomePage from './WelcomePage';
 import HomePage from './HomePage';
 import SingleUserPage from './SingleUserPage';
+import SingleArticlePage from './SingleArticlePage';
 import Navbar from './Navbar';
 
 class App extends Component {
@@ -42,6 +43,11 @@ class App extends Component {
     if (this.state.route.startsWith('/users/')) {
       const id = this.state.route.split('/users/')[1];
       return <SingleUserPage id={id} />;
+    }
+    // www.globex.com/articles/articleid/
+    if (this.state.route.startsWith('/articles/')) {
+      const id = this.state.route.split('/articles/')[1];
+      return <SingleArticlePage id={id} />;
     }
     // www.globex.com
     return <WelcomePage />;
