@@ -10,9 +10,10 @@ import config from './webpack.config';
 import dbConfigFile from './config/config';
 
 // const dbConfig = dbConfigFile[process.env.NODE_ENV];
+const dbConfig = dbConfigFile.test;
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`);
+mongoose.Promise = global.Promise;
+mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`);
 
 const port = process.env.PORT || 3000;
 
