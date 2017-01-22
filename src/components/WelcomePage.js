@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './WelcomePageStyleSheet.css';
+import './welcomePageStyleSheet.css';
 
 class WelcomePage extends Component {
   render() {
