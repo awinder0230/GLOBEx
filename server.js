@@ -13,7 +13,9 @@ import dbConfigFile from './config/config';
 const dbConfig = dbConfigFile.test;
 
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`);
+mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`,
+  (err) => { if(err) console.error(err);
+             console.log('  Successfully connect to MongoDB !'); });
 
 const port = process.env.PORT || 3000;
 
