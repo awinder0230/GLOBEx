@@ -10,9 +10,10 @@ const options = {
 const articleSchema = mongoose.Schema({
   id: String,
   title: String,
-  content: String,
-  tags: [],
   author: String,
+  tags: [],
+  location: String,
+  content: String,
   popularity: Number,
 }, options);
 

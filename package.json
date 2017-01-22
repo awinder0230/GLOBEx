@@ -4,6 +4,7 @@
   "description": "A global cuisine sharing platform",
   "main": "index.js",
   "scripts": {
+    "initData": "node src/models/testData.js",
     "start": "babel-node server.js",
     "lint": "eslint src server.js api.js webpack.confing.js"
   },
