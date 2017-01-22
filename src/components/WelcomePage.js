@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
+import './WelcomePageStyleSheet.css';
+
 class WelcomePage extends Component {
   render() {
     return (
-      <div align="center" className="embed-responsive embed-responsive-16by9">
-        <video autoplay loop className="embed-responsive-item">
-           <source src="http://techslides.com/demos/sample-videos/small.mp4" type=video/mp4></source>
-        </video>
-        <button type="button" className="btn btn-outline-secondary">Serving</button>
+      <div className="container-fluid">
+        <div className="video-background">
+          <div className="video-foreground">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PZ4pctQMdg4?autoplay=1&loop=1&playlist=PZ4pctQMdg4" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     );
   }

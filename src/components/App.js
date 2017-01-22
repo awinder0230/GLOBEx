@@ -18,6 +18,10 @@ class App extends Component {
     });
   }
 
+  renderNavbar() {
+    return <Navbar />;
+  }
+
   renderRoute() {
     // www.globex.com/home/
     if (this.state.route === '/home') {
