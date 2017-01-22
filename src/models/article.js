@@ -8,11 +8,12 @@ const options = {
 };
 
 const articleSchema = mongoose.Schema({
-  //id: String,
-  //title: String,
-  //content: String,
-  //tags: [],
-  // add more
+  id: String,
+  title: String,
+  content: String,
+  tags: [],
+  author: String,
+  popularity: Number,
 }, options);
 
 export const Article = mongoose.model('Article', articleSchema);

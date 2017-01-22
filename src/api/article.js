@@ -5,47 +5,42 @@ import { Article } from '../models';
 
 const articleRouter = new Router();
 
+/*
+articleSchema = {
+  id: String,
+  title: String,
+  content: String,
+  tags: [],
+  author: String,
+  popularity: Number,
+}
+*/
+
 // /api/articles/
 articleRouter.get('/', (req, res) => {
-  Article.find().exec((err, articles) => {
-  	if (err) return res.status(500).send(err);
-  	return res.json(articles);
-  })
+	// Get all articles
 });
 
-// /api/articles/xxxx
 articleRouter.get('/:id', (req, res) => {
-	const id = req.params.id;
-	Article.findById(id, (err, article) => {
-		if(err) return res.status(500).send(err);
-		return res.json(article);
-	})
+	// Get one article by id
+});
+
+articleRouter.get('/query', (req, res) => {
+  // Get articles using query
+  // Example: /api/users/query?title=john&...
+  // There are "" to be in a query.
 });
 
 articleRouter.post('/', (req, res) => {
-	const { title, content, tags } = req.body;
-	Article.create({
-		title,
-		content,
-		tags
-	}, (err, article) => res.json(article));
+	// Post one article
 });
 
 articleRouter.put('/:id', (req, res) => {
-		const { title, content, tags} = req.body;
-		const query = {
-			_id: req.params.id,
-		};
-		Article.findOneAndUpdate(query, {
-			title, content, tags
-		}, {new: true}, (err, article) => res.json(article));
+	// Update one article by id
 });
 
 articleRouter.delete('/:id', (req, res) => {
-	const id = req.params.id;
-	Article.findByIdAndRemove(id, err => {
-		if(err) return res.status(500).send(err);
-	});
+	// Delete one article by id
 });
 
 export default articleRouter;
