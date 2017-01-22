@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
 import HomePageSlider from './HomePageSlider.js';
-import HomePageGallery from './HomePageGallery.js';
+import HomePageGallery3 from './HomePageGallery3.js';
+import HomePageGallery4 from './HomePageGallery4.js';
 import 'slick-carousel';
 
 class HomePage extends Component {
@@ -36,11 +37,12 @@ class HomePage extends Component {
             <HomePageSlider/>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12">
-            <HomePageGallery/>
-          </div>
-        </div>
+          <HomePageGallery3/>
+          <HomePageGallery4/>
+          <HomePageGallery3/>
+          <HomePageGallery4/>
+          <HomePageGallery3/>
+          <HomePageGallery4/>
       </div>
     );
   }
