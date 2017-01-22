@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 class Navbar extends Component {
   render() {
+    const { onSubmit } = this.props;
     return (
       <nav className="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container-fluid">
@@ -21,7 +22,7 @@ class Navbar extends Component {
               <div className="form-group">
                 <input type="text" className="form-control" placeholder="Search"></input>
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button type="submit" className="btn btn-default" onClick={() => onSubmit()}>Submit</button>
             </form>
           </div>
         </div>

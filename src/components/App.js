@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 class App extends Component {
   state = {
     route: window.location.hash.substr(1),
+    search: '',
   };
 
   componentDidMount() {
@@ -18,11 +19,21 @@ class App extends Component {
     });
   }
 
+  onSubmit() {
+    let target = document.getElementsByClassName('form-control')[0];
+    this.setState({
+      route: '/users/' + target.value,
+      search: target.value,
+    });
+    target.value = '';
+  }
+
   renderNavbar() {
-    return <Navbar />;
+    return <Navbar onSubmit={() => this.onSubmit()}/>;
   }
 
   renderRoute() {
+    console.log("route: ", this.state.route);
     // www.globex.com/home/
     if (this.state.route === '/home') {
       return <HomePage />;
