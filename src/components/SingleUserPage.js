@@ -26,9 +26,18 @@ class SingleUserPage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.state.user.name}</h1>
-        <h2>{this.state.user.account}</h2>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="thumbnail text-center">
+              <img src="http://www.drodd.com/images15/food11.jpg" alt="" className="img-responsive"></img>
+              <div className="caption">
+                <h1 style={{ color: 'white' }}>{this.state.user.name}'s Cuisine Diary</h1>
+                <h3 style={{ color: 'white' }}>This is my account: {this.state.user.account}</h3> 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
