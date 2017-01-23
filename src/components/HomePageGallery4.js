@@ -5,7 +5,7 @@ const HomePageGallery4 = (props) => {
   	<div>
       <div className="row">
         <div className="col-md-12">
-          <h3><span className="glyphicon glyphicon-check" aria-hidden="true"></span>  Chef's Choice: Rural Life Style</h3>
+          <h3><span className="glyphicon glyphicon-check" aria-hidden="true"></span>  {props.heading}</h3>
         </div>
       </div>
       <div className="row">
