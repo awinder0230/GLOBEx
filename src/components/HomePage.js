@@ -10,17 +10,24 @@ class HomePage extends Component {
     super(props);
     this.state = {
       best_choice_authors: [],
+      articles: [],
     };
   }
 
   componentDidMount() {
     // fetch best sellers for HomePageSlider
-    fetch('/api/users/query?name=user1')
+    fetch('/api/users/')
     .then(res => res.json())
     .then(json => { 
       this.setState({ best_choice_authors: json });
+      console.log('authors: ', json);
     });
-    console.log(this.state.best_choice_authors);
+    fetch('/api/articles/')
+    .then(res => res.json())
+    .then(json => { 
+      this.setState({ articles: json });
+      console.log('articles: ', json);
+    });  
   }
 /*
   componentDidMount() {

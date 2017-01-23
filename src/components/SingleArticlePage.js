@@ -17,11 +17,11 @@ class SingleArticlePage extends Component {
   }
 
   componentDidMount() {
-    // const { id } = this.props;
-    fetch(`api/articles/`)
-      .then(res => { return res.json(); })
-      .then(json => {
-        const id = json[0]._id;
+    const { id } = this.props;
+    //fetch(`api/articles/`)
+      //.then(res => { return res.json(); })
+      //.then(json => {
+        //const id = json[0]._id;
         fetch(`api/articles/${id}`)
           .then(res => { return res.json(); })
           .then(json => {
@@ -37,7 +37,7 @@ class SingleArticlePage extends Component {
               article: json.article 
             });
         });
-      });    
+      //});    
   }
 
   render() {
