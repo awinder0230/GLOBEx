@@ -21,6 +21,7 @@ class SingleArticlePage extends Component {
     fetch(`api/articles/`)
       .then(res => { return res.json(); })
       .then(json => {
+        const id = json[0]._id;
         fetch(`api/articles/${id}`)
           .then(res => { return res.json(); })
           .then(json => {
