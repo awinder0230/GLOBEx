@@ -11,20 +11,20 @@ const HomePageGallery3 = (props) => {
       <div className="row">
         <div className="col-md-4">
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>
-          <h6>Wang Roast Steak</h6>
-          <h6>Tiffant Chih</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/1">Wang Roast Steak</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/1">Tiffant Chih</a></h6>
           <h6>Popularity: ★★★★★</h6>
         </div>
         <div className="col-md-4">
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>
-          <h6>Wang Roast Steak</h6>
-          <h6>Tiffant Chih</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/1">Wang Roast Steak</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/1">Tiffant Chih</a></h6>
           <h6>Popularity: ★★★★★</h6>
         </div>
         <div className="col-md-4">
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>
-          <h6>Wang Roast Steak</h6>
-          <h6>Tiffant Chih</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/1">Wang Roast Steak</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/1">Tiffant Chih</a></h6>
           <h6>Popularity: ★★★★★</h6>
         </div>
       </div>

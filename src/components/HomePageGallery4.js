@@ -11,26 +11,26 @@ const HomePageGallery4 = (props) => {
       <div className="row">
         <div className="col-md-3">
           <img width="100%" src="http://cdn.foodbeast.com/content/uploads/2016/07/Garden-Salad-1.jpg"></img>
-          <h6>Caesar Salad</h6>
-          <h6>Jason Kuo</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/2">Caesar Salad</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/2">Jason Kuo</a></h6>
           <h6>Popularity: ★★★★</h6>
         </div>
         <div className="col-md-3">
           <img width="100%" src="http://cdn.foodbeast.com/content/uploads/2016/07/Garden-Salad-1.jpg"></img>
-          <h6>Caesar Salad</h6>
-          <h6>Jason Kuo</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/2">Caesar Salad</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/2">Jason Kuo</a></h6>
           <h6>Popularity: ★★★★</h6>
         </div>
         <div className="col-md-3">
           <img width="100%" src="http://cdn.foodbeast.com/content/uploads/2016/07/Garden-Salad-1.jpg"></img>
-          <h6>Caesar Salad</h6>
-          <h6>Jason Kuo</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/2">Caesar Salad</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/2">Jason Kuo</a></h6>
           <h6>Popularity: ★★★★</h6>
         </div>
         <div className="col-md-3">
           <img width="100%" src="http://cdn.foodbeast.com/content/uploads/2016/07/Garden-Salad-1.jpg"></img>
-          <h6>Caesar Salad</h6>
-          <h6>Jason Kuo</h6>
+          <h6><a style={{ color: 'black' }} href="#/articles/2">Caesar Salad</a></h6>
+          <h6><a style={{ color: 'black' }} href="#/users/2">Jason Kuo</a></h6>
           <h6>Popularity: ★★★★</h6>
         </div>
       </div>
