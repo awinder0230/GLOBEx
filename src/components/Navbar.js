@@ -9,7 +9,7 @@ class Navbar extends Component {
         <div className="container-fluid">
           <div className="navbar-header">
             <a className="navbar-brand" href="#">
-              <img alt="Gourmet" src="...link for brand picture"></img>
+              <img alt="Gourmet" src="./static/icon.png" height="150%"></img>
             </a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,6 +31,5 @@ class Navbar extends Component {
     );
   }
 }
-
 
 export default Navbar;
