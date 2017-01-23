@@ -44,8 +44,8 @@ class SingleArticlePage extends Component {
     return (
       <div className="container-fluid container-low-opacity">
         <div className="row">
-          <div className="col-md-12">
-            <div className="text-center">
+          <div className="col-md-12 cover-photo">
+            <div className="text-center cover-photo-thumnail">
               <img width="100%" src="http://wildfirerestaurant.co.uk/wp-content/uploads/2014/10/ph_homepage-banner.jpg" alt="" className="img-responsive"></img>
               <div className="caption">
                 <h1 style={{ color: 'white' }}>{this.state.title}</h1>
