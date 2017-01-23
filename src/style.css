@@ -8,3 +8,13 @@
     left: 0;
     width: 100%;
 }
+
+.cover-photo {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cover-photo-thumnail {
+    padding: 0;
+    border: 0;
+}

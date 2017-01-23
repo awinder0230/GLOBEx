@@ -28,12 +28,12 @@ class SingleUserPage extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-12">
-            <div className="thumbnail text-center">
+          <div className="col-md-12 cover-photo">
+            <div className="thumbnail text-center cover-photo-thumnail">
               <img src="http://www.drodd.com/images15/food11.jpg" alt="" className="img-responsive"></img>
               <div className="caption">
                 <h1 style={{ color: 'white' }}>{this.state.user.name}'s Cuisine Diary</h1>
-                <h3 style={{ color: 'white' }}>This is my account: {this.state.user.account}</h3> 
+                <h3 style={{ color: 'white' }}>This is my account: {this.state.user.account}</h3>
               </div>
             </div>
           </div>
@@ -60,5 +60,3 @@ const SingleUserPageArticle = props => <div className="list-group">
     <p className="list-group-item-text">{props.content}</p>
   </a>
 </div>
-
-
