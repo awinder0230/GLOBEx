@@ -5,9 +5,15 @@ import webpack from 'webpack';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
+import cookieParser from 'cookie-parser';
+import passport from 'passport';
+import session from 'express-session';
+
 import api from './src/api/';
+import auth from './src/auth/';
 import config from './webpack.config';
 import dbConfigFile from './config/config';
+
 
 // const dbConfig = dbConfigFile[process.env.NODE_ENV];
 const dbConfig = dbConfigFile.test;
@@ -33,6 +39,18 @@ app.use(require('webpack-dev-middleware')(compiler, {
     colors: true,
   },
 }));
+
+app.use(cookieParser());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.use('/', auth);
 
 app.use('/api', api);
 

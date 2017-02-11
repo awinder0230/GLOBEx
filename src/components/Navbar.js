@@ -49,11 +49,13 @@ class Navbar extends Component {
               </div>
               <div className="modal-footer modal-login-footer">
                 <div>
-                    <button type="submit" className="btn btn-login btn-lg btn-block">Login</button>
+                  <a href="/auth/facebook" className="btn btn-login btn-lg btn-block btn-link">FaceBook Login</a>
+                  //<button type="submit" className="btn btn-login btn-lg btn-block" onClick={() => onLogin()}>FB Login</button>
                 </div>
 			    	    <div>
                   <button id="login_lost_btn" type="button" className="btn btn-link">Forget Password?</button>
                   <button id="login_register_btn" type="button" className="btn btn-link">Register</button>
+                  <a href="/auth/facebook" className="btn btn-link">FaceBook Login</a>
               </div>
 			        </div>
             </div>

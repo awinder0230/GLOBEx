@@ -5,6 +5,7 @@ const userSchema = mongoose.Schema({
   name: String,
   account: String,
   password: String,
+  facebookid: String,
 });
 
 export const User = mongoose.model('User', userSchema);
