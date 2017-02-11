@@ -52,6 +52,25 @@ class SingleArticlePage extends Component {
       state.content = this.newContent.value;
       return state;
     });
+
+    fetch(`api/articles/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userId: this.state.userId,
+        id: this.state.id,
+        title: this.state.title,
+        author: this.state.author,
+        tags: this.state.tags,
+        location: this.state.location,
+        content: this.state.content,
+        popularity: this.state.popularity,
+        article: this.state.article
+      }),
+    });
   }
 
   render() {
