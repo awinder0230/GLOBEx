@@ -47,29 +47,29 @@ class SingleArticlePage extends Component {
   }
 
   saveChanges() {
+    const { id } = this.props;
     this.setState((state) => {
       state.title = this.newTitle.value;
       state.content = this.newContent.value;
+      fetch(`api/articles/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: state.userId,
+          id: state.id,
+          title: state.title,
+          author: state.author,
+          tags: state.tags,
+          location: state.location,
+          content: state.content,
+          popularity: state.popularity,
+          article: state.article
+        }),
+      });
       return state;
-    });
-
-    fetch(`api/articles/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        userId: this.state.userId,
-        id: this.state.id,
-        title: this.state.title,
-        author: this.state.author,
-        tags: this.state.tags,
-        location: this.state.location,
-        content: this.state.content,
-        popularity: this.state.popularity,
-        article: this.state.article
-      }),
     });
   }
 

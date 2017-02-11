@@ -39,6 +39,7 @@ app.use('/api', api);
 app.use('/static', express.static(__dirname + '/public'));
 
 app.get('*', (req, res) => {
+console.log('Get user');
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

@@ -71,6 +71,8 @@ articleRouter.put('/:id', (req, res) => {
 	const { title, content, tags, author, location } = req.body;
   const query = { _id: req.params.id };
 
+console.log('put article', req.body);
+
   Article.findOneAndUpdate(query, { title, content, tags, author },
     { new: true }, (err, article) => {
       if(err) res.status(500).send(err);
