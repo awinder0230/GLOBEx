@@ -11,7 +11,7 @@ class HomePage extends Component {
     super(props);
     this.state = {
       best_choice_authors: [],
-      articles: [{_id: 0}],
+      articles: [{_id: "", title: "", author:"", userId: "", tags: "", popularity: 0}],
     };
   }
 
@@ -37,17 +37,17 @@ class HomePage extends Component {
       .then(json => { this.setState({ user: json[0] }); });
   }
 */
-  render() {
+
+  renderGallery() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <HomePageSlider/>
-          </div>
-        </div>
+      <div>
         <HomePageGallery3
           heading="Chef's Choice: Western Cowboy"
           id={this.state.articles[0]._id}
+          title={this.state.articles[0].title}
+          author={this.state.articles[0].author}
+          userId={this.state.articles[0].userId}
+          popularity={this.state.articles[0].popularity}
         />
         <HomePageGallery4
           heading="Chef's Choice: Rural Life Style"
@@ -67,6 +67,19 @@ class HomePage extends Component {
         <HomePageGallery4
           heading="Chef's Choice: Rural Life Style"
         />
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <HomePageSlider/>
+          </div>
+        </div>
+        {this.renderGallery()}
       </div>
     );
   }
