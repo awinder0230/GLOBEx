@@ -49,7 +49,7 @@ class Navbar extends Component {
               </div>
               <div className="modal-footer modal-login-footer">
                 <div>
-                    <button type="submit" className="btn btn-login btn-lg btn-block">Login</button>
+                    <button type="submit" className="btn btn-gourmet btn-lg btn-block">Login</button>
                 </div>
 			    	    <div>
                   <button id="login_lost_btn" type="button" className="btn btn-link">Forget Password?</button>

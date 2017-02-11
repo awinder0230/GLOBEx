@@ -1,43 +1,44 @@
 .thumbnail {
-    position: relative;
+  position: relative;
 }
 
 .caption {
-    position: absolute;
-    top: 45%;
-    left: 0;
-    width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
 }
 
 .cover-photo {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .cover-photo-thumnail {
-    padding: 0;
-    border: 0;
+  background-color: #000000;
+  padding: 0;
+  border: 0;
 }
 
 .padding-top-20 {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .padding-top-50 {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .margin-top-10 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-.btn-login {
+.btn-gourmet {
   color: #FFFFFF;
   background-color: #333333;
   border-color: #2F2F2F;
 }
 
-.btn-login:hover {
+.btn-gourmet:hover {
   color: #FFFFFF;
   background-color: #222222;
   border-color: #151515;
@@ -48,12 +49,16 @@
 }
 
 .modal-login-body {
-    position: relative;
-    padding: 35px 35px 5px 35px;
+  position: relative;
+  padding: 35px 35px 5px 35px;
 }
 
 .modal-login-footer {
-    padding: 5px 35px 25px 35px;
-    text-align: left;
-    border-top: 0px;
+  padding: 5px 35px 25px 35px;
+  text-align: left;
+  border-top: 0px;
+}
+
+.col-form-label {
+  margin-top: 8px;
 }
