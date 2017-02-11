@@ -29,6 +29,15 @@ class App extends Component {
     target.value = '';
   }
 
+  onLogin() {
+    let target = document.getElementsByClassName('form-control')[0];
+    this.setState({
+      route: '/users/' + target.value,
+      search: target.value,
+    });
+    target.value = '';
+  }
+  
   renderNavbar() {
     return <Navbar onSubmit={() => this.onSubmit()}/>;
   }
