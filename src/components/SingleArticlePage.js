@@ -105,7 +105,7 @@ class SingleArticlePage extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                  <h3>Edit Article</h3>
+                <h3>Edit Article</h3>
               </div>
               <div className="modal-body">
                 <div className="container-fluid">
