@@ -11,20 +11,20 @@ const HomePageGallery3 = (props) => {
       <div className="row">
         <div className="col-md-4">
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>
-          <h6><a style={{ color: 'black' }} href={"#/articles/"+props.id}>Wang Roast Steak</a></h6>
-          <h6><a style={{ color: 'black' }} href="#/users/1">Tiffant Chih</a></h6>
+          <h6><a style={{ color: 'black' }} href={"#/articles/"+props.id}>{props.title}</a></h6>
+          <h6><a style={{ color: 'black' }} href={"#/users/"+props.userId}>{props.author}</a></h6>
           <h6>Popularity: ★★★★★</h6>
         </div>
         <div className="col-md-4">
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>
-          <h6><a style={{ color: 'black' }} href={"#/articles/"+props.id}>Wang Roast Steak</a></h6>
-          <h6><a style={{ color: 'black' }} href="#/users/1">Tiffant Chih</a></h6>
+          <h6><a style={{ color: 'black' }} href={"#/articles/"+props.id}>{props.title}</a></h6>
+          <h6><a style={{ color: 'black' }} href={"#/users/"+props.userId}>{props.author}</a></h6>
           <h6>Popularity: ★★★★★</h6>
         </div>
         <div className="col-md-4">
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>
-          <h6><a style={{ color: 'black' }} href={"#/articles/"+props.id}>Wang Roast Steak</a></h6>
-          <h6><a style={{ color: 'black' }} href="#/users/1">Tiffant Chih</a></h6>
+          <h6><a style={{ color: 'black' }} href={"#/articles/"+props.id}>{props.title}</a></h6>
+          <h6><a style={{ color: 'black' }} href={"#/users/"+props.userId}>{props.author}</a></h6>
           <h6>Popularity: ★★★★★</h6>
         </div>
       </div>
