@@ -32,16 +32,31 @@
   margin-top: 10px;
 }
 
+.margin-top-50 {
+  margin-top: 50px;
+}
+
 .btn-gourmet {
   color: #FFFFFF;
   background-color: #333333;
   border-color: #2F2F2F;
 }
 
+.btn-pull-right {
+  position: absolute;
+  right: 30px;
+}
+
 .btn-gourmet:hover {
   color: #FFFFFF;
   background-color: #222222;
   border-color: #151515;
+}
+
+.btn-gourmet:focus {
+  color: #FFFFFF;
+  background-color: #222222;
+  border-color: #151515;  
 }
 
 .modal-login-content {
@@ -60,5 +75,5 @@
 }
 
 .col-form-label {
-  margin-top: 8px;
+  margin-top: 7px;
 }
