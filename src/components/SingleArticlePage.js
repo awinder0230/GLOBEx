@@ -21,29 +21,24 @@ class SingleArticlePage extends Component {
 
   componentDidMount() {
     const { id } = this.props;
-    //fetch(`api/articles/`)
-      //.then(res => { return res.json(); })
-      //.then(json => {
-        //const id = json[0]._id;
-        fetch(`api/articles/${id}`)
-          .then(res => { return res.json(); })
-          .then(json => {
-            console.log('article', json);
-            this.setState({
-              userId: json.userId,
-              id: json.id,
-              title: json.title,
-              author: json.author,
-              tags: json.tags,
-              location: json.location,
-              content: json.content,
-              popularity: json.popularity,
-              article: json.article
-            });
-            this.newTitle.value = json.title;
-            this.newContent.value = json.content;
+    fetch(`api/articles/${id}`)
+      .then(res => { return res.json(); })
+      .then(json => {
+        console.log('article', json);
+        this.setState({
+          userId: json.userId,
+          id: json.id,
+          title: json.title,
+          author: json.author,
+          tags: json.tags,
+          location: json.location,
+          content: json.content,
+          popularity: json.popularity,
+          article: json.article
         });
-      //});
+        this.newTitle.value = json.title;
+        this.newContent.value = json.content;
+    });
   }
 
   saveChanges() {

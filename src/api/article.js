@@ -10,6 +10,7 @@ articleSchema = {
   id: String,
   title: String,
   author: String,
+  userId: String,
   tags: [],
   location: String,
   content: String,

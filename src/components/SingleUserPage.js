@@ -6,8 +6,10 @@ class SingleUserPage extends Component {
     super();
     this.state = {
       user: {
+        id: '',
         name: 'test',
-        account: 'test'
+        account: 'test',
+        facebookid: ''
       },
       articles: []
     };
@@ -16,19 +18,19 @@ class SingleUserPage extends Component {
   }
 
   componentDidMount() {
-    fetch('api/users/query?name=user1')
+    const { id } = this.props;
+    fetch(`api/users/${id}`)
       .then(res => { return res.json(); })
-      .then(json => { this.setState({ user: json[0] }); })
+      .then(json => { this.setState({ user: json }); })
       .then( () => {
-        fetch(`api/articles/query?author=${this.state.user.account}&num=10`)
+        fetch(`api/articles/query?userId=${this.state.user.id}&num=10`)
           .then(res => { return res.json(); })
           .then(json => { console.log('articles', json) ; this.setState({ articles: json }); });
       });
   }
 
   newArticle() {
-    /*
-    fetch(`api/articles/${id}`, {
+    fetch(`api/articles/`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -46,7 +48,6 @@ class SingleUserPage extends Component {
         article: null
       }),
     });
-    */
   }
 
   render() {

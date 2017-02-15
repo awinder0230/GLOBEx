@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
 import HomePageSlider from './HomePageSlider.js';
-import HomePageGallery3 from './HomePageGallery3.js';
-import HomePageGallery4 from './HomePageGallery4.js';
-import HomePageGallery6 from './HomePageGallery6.js';
+import HomePageGallery from './HomePageGallery.js';
 import 'slick-carousel';
 
 class HomePage extends Component {
@@ -21,51 +19,42 @@ class HomePage extends Component {
     .then(res => res.json())
     .then(json => { 
       this.setState({ best_choice_authors: json });
-      console.log('authors: ', json);
     });
     fetch('/api/articles/')
     .then(res => res.json())
     .then(json => { 
       this.setState({ articles: json });
-      console.log('articles: ', json);
     });  
   }
-/*
-  componentDidMount() {
-    fetch('api/users/query?name=user1')
-      .then(res => { return res.json(); })
-      .then(json => { this.setState({ user: json[0] }); });
-  }
-*/
 
   renderGallery() {
+    console.log(this.state.articles);
     return (
       <div>
-        <HomePageGallery3
+        <HomePageGallery
           heading="Chef's Choice: Western Cowboy"
-          id={this.state.articles[0]._id}
-          title={this.state.articles[0].title}
-          author={this.state.articles[0].author}
-          userId={this.state.articles[0].userId}
-          popularity={this.state.articles[0].popularity}
+          articles={this.state.articles.slice(0, 3)}
+          num={3}
         />
-        <HomePageGallery4
-          heading="Chef's Choice: Rural Life Style"
+        <HomePageGallery
+          heading="chef's choice: rural life style"
+          articles={this.state.articles.slice(3, 7)}
+          num={4}
         /> 
-        <HomePageGallery3
+        <HomePageGallery
           heading="Chef's Choice: Western Cowboy"
+          articles={this.state.articles.slice(7, 10)}
+          num={3}
         />
-        <HomePageGallery6
+        <HomePageGallery
           heading="Chef's Choice: Popeye the Sailor man"
+          articles={this.state.articles.slice(10, 16)}
+          num={6}
         />  
-        <HomePageGallery4
-          heading="Chef's Choice: Rural Life Style"
-        />
-        <HomePageGallery3
+        <HomePageGallery
           heading="Chef's Choice: Western Cowboy"
-        />
-        <HomePageGallery4
-          heading="Chef's Choice: Rural Life Style"
+          articles={this.state.articles.slice(16, 20)}
+          num={4}
         />
       </div>
     );
