@@ -62,10 +62,10 @@ articleRouter.get('/:id', (req, res) => {
 articleRouter.post('/', (req, res) => {
 	// Post one article
   console.log('post article: ', req.body);
-	const { title, content, tags, author, location, userId } = req.body;
+	const { title, content, tags, author, location, userId, popularity } = req.body;
 
 	Article.create({
-		title, content, tags, author,	location, userId
+		title, content, tags, author,	location, userId, popularity
 	}, (err, article) => {
 		if(err) res.status(500).send(err);
     return res.json(article);
