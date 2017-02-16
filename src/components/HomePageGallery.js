@@ -4,6 +4,7 @@ class HomePageGallery extends Component {
   genGallery(articles, galleryClassName) {
     return articles.map((article, index) => 
     {
+      console.log('article: ' , article);
       return (
         <div className={galleryClassName} key={index}>
           <img width="100%" src="https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Rump-Steak-Meal-Deal.jpg"></img>

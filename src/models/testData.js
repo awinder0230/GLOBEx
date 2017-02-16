@@ -20,6 +20,7 @@ const articleSchema = mongoose.Schema({
   id: String,
   title: String,
   author: String,
+  userId: String,
   tags: [],
   location: String,
   content: String,
@@ -31,6 +32,7 @@ const userSchema = mongoose.Schema({
   name: String,
   account: String,
   password: String,
+  facebookid: String,
 });
 
 const User = mongoose.model('User', userSchema);
@@ -47,28 +49,40 @@ for(var i = 0; i < 50; i++) {
 }
 
 User.create(users,
-  (err, user) => {
+  (err) => {
     if(err) console.error(err);
     else console.log('  > test users have been saved !');
-  }
-);
-
-var articles = [];
-for(var i = 0; i < 50; i++) {
-  var article = {
-    title: `The 10 Best Steakhouses in NYC`,
-    content: `Kept alive by nearly two centuries of chewing carnivores, the New York City steakhouse defiantly broils on. Classic steakhouses, like Peter Luger and Keens, enjoy a certain amount of stability not common in the current dining climate, where even the most exciting chef-driven small plates tasting counters last about as long as the Edison bulbs that light their communal bathroom foyers. Many of these meat mongers have histories as well marbled as the aged cuts they serve, often extending back into the 19th and early 20th centuries. Taking their cues from the gregarious man-and-meat gatherings known as beefsteak socials, these old guard chophouses almost always feature dark wood and clubby atmospheres, but thanks to this current period of food culture awareness, a modern version of the steakhouse has emerged, where starters and sides are less of an afterthought. Traditional or contemporary, the restaurants on this list all excel in both char and charm. These are the 10 best steakhouses in NYC.`,
-    tags: ['tag1', 'tag2', 'tag3'],
-    author: `account${i}`,
-    location: 'Taipei',
-    popularity: `${i}`,
-  }
-  articles.push(article);
-}
-
+User.find({}, (err , users) => {
+  console.log('get users: ', users);
+  if(err) console.error(err);
+  else {
+    let articles = [];
+    users.forEach((user, index) => {
+      console.log('user: ' , user);
+      for( let i = 0 ; i < 5 ; i++ ) {
+        let article = {
+          title: `The 10 Best Steakhouses in NYC`,
+          content: `Kept alive by nearly two centuries of chewing carnivores, the New York City steakhouse defiantly broils on. Classic steakhouses, like Peter Luger and Keens, enjoy a certain amount of stability not common in the current dining climate, where even the most exciting chef-driven small plates tasting counters last about as long as the Edison bulbs that light their communal bathroom foyers. Many of these meat mongers have histories as well marbled as the aged cuts they serve, often extending back into the 19th and early 20th centuries. Taking their cues from the gregarious man-and-meat gatherings known as beefsteak socials, these old guard chophouses almost always feature dark wood and clubby atmospheres, but thanks to this current period of food culture awareness, a modern version of the steakhouse has emerged, where starters and sides are less of an afterthought. Traditional or contemporary, the restaurants on this list all excel in both char and charm. These are the 10 best steakhouses in NYC.`,
+          tags: ['tag1', 'tag2', 'tag3'],
+          author: `${user.name}`,
+          location: 'Taipei',
+          popularity: `${Math.floor(Math.random()*5000)}`,
+          userId: `${user._id}`
+        }
+        console.log(article);
+        articles.push(article);
+      }
 Article.create(articles,
   (err, article) => {
     if(err) console.error(err);
     else console.log('  > test articles have been saved !');
   }
 );
+articles = [];
+    });
+  }
+});
+
+  }
+);
+

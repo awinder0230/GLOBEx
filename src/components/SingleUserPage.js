@@ -6,7 +6,7 @@ class SingleUserPage extends Component {
     super();
     this.state = {
       user: {
-        id: '',
+        _id: '',
         name: 'test',
         account: 'test',
         facebookid: ''
@@ -21,32 +21,42 @@ class SingleUserPage extends Component {
     const { id } = this.props;
     fetch(`api/users/${id}`)
       .then(res => { return res.json(); })
-      .then(json => { this.setState({ user: json }); })
-      .then( () => {
-        fetch(`api/articles/query?userId=${this.state.user.id}&num=10`)
-          .then(res => { return res.json(); })
-          .then(json => { console.log('articles', json) ; this.setState({ articles: json }); });
-      });
+      .then(json => { 
+        this.setState(
+        (state) => { 
+          console.log('json: ', json);
+          state.user = json;
+          console.log('state: ', state);
+          fetch(`api/articles/query?userId=${state.user._id}&num=10`)
+            .then(res => { return res.json(); })
+            .then(json2 => { console.log('articles', json2) ; this.setState({ articles: json2}); });
+          return state;
+        });
+      })
   }
 
   newArticle() {
+    const article = {
+        userId: this.state.user._id,
+        title: this.newTitle.value,
+        author: this.state.user.account,
+        tags: [],
+        location: this.newLocation.value,
+        content: this.newContent.value,
+        popularity: this.newPopularity.value,
+        article: null
+      };
     fetch(`api/articles/`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        userId: this.state.user.account,
-        id: state.id,
-        title: this.newTitle.value,
-        author: this.state.user.name,
-        tags: [],
-        location: this.newLocation.value,
-        content: this.newContent.value,
-        popularity: this.newPopularity.value,
-        article: null
-      }),
+      body: JSON.stringify(article),
+    });
+    this.setState((state) => {
+      state.articles.unshift(article); 
+      return state;
     });
   }
 
@@ -152,7 +162,7 @@ class SingleUserPage extends Component {
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close without saving</button>
-                <button type="button" className="btn btn-gourmet" data-dismiss="modal" onClick={this.newArticle}>Save changes</button>
+                <button type="button" className="btn btn-gourmet" data-dismiss="modal" onClick={()=>this.newArticle()}>Save changes</button>
               </div>
             </div>
           </div>

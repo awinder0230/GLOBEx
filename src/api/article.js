@@ -21,7 +21,7 @@ articleSchema = {
 // /api/articles/
 articleRouter.get('/', (req, res) => {
 	// Get all articles
-	Article.find({}, (err, articles) => {
+	Article.find({}).sort({popularity: -1}).exec((err, articles) => {
 		if(err) return res.status(500).send(err);
 		return res.json(articles);
 	});
@@ -40,9 +40,9 @@ articleRouter.get('/query', (req, res) => {
     delete query['num'];
   }
 
-  Article.find(query).limit(num).sort({popularity: -1}).exec((err, users) => {
+  Article.find(query).limit(num).sort({popularity: -1}).exec((err, articles) => {
     if(err) return res.status(500).send(err);
-    return res.json(users);
+    return res.json(articles);
   });
 });
 
@@ -57,10 +57,11 @@ articleRouter.get('/:id', (req, res) => {
 
 articleRouter.post('/', (req, res) => {
 	// Post one article
-	const { title, content, tags, author, location } = req.body;
+  console.log('post article: ', req.body);
+	const { title, content, tags, author, location, userId } = req.body;
 
 	Article.create({
-		title, content, tags, author,		
+		title, content, tags, author,	location, userId
 	}, (err, article) => {
 		if(err) res.status(500).send(err);
     return res.json(article);
