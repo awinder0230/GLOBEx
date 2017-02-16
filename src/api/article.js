@@ -34,13 +34,17 @@ articleRouter.get('/query', (req, res) => {
   console.log('get query: ', req.query);
   let query = req.query;
   let num = 1;
+  let constraint = { popularity: -1 };
 
   if(query.hasOwnProperty('num')) {
     num = parseInt(query.num);
     delete query['num'];
   }
+  if(query.hasOwnProperty('userId')) {
+    constraint = { created_at: -1 };
+  }
 
-  Article.find(query).limit(num).sort({popularity: -1}).exec((err, articles) => {
+  Article.find(query).limit(num).sort(constraint).exec((err, articles) => {
     if(err) return res.status(500).send(err);
     return res.json(articles);
   });

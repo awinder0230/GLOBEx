@@ -27,7 +27,7 @@ class SingleUserPage extends Component {
           console.log('json: ', json);
           state.user = json;
           console.log('state: ', state);
-          fetch(`api/articles/query?userId=${state.user._id}&num=10`)
+          fetch(`api/articles/query?userId=${state.user._id}&num=100`)
             .then(res => { return res.json(); })
             .then(json2 => { console.log('articles', json2) ; this.setState({ articles: json2}); });
           return state;
@@ -53,11 +53,14 @@ class SingleUserPage extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(article),
-    });
+    })
+    .then(() => { this.componentDidMount(); });
+    /*
     this.setState((state) => {
       state.articles.unshift(article); 
       return state;
     });
+    */
   }
 
   render() {
