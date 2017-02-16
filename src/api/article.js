@@ -62,7 +62,9 @@ articleRouter.get('/:id', (req, res) => {
 articleRouter.post('/', (req, res) => {
 	// Post one article
   console.log('post article: ', req.body);
-	const { title, content, tags, author, location, userId, popularity } = req.body;
+	const { title, content, tags, author, location, userId } = req.body;
+	let { popularity } = req.body;
+	popularity = +popularity;
 
 	Article.create({
 		title, content, tags, author,	location, userId, popularity
