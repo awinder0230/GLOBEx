@@ -5,4 +5,8 @@ coverage
 lib
 dist
 config/config.js
+<<<<<<< HEAD
 config/config.azure
+=======
+report
+>>>>>>> README
